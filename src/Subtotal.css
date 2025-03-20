@@ -1,13 +1,17 @@
+/* General Styling */
 .subtotal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
-  height: 100px;
+  width: 100%; /* Make it take the full width of the parent container */
+  max-width: 250px; /* Limit the width on larger screens */
+  height: auto; /* Allow height to adjust dynamically */
   padding: 20px;
   background-color: #f3f3f3;
   border: 1px solid #dddddd;
   border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  margin: 10px auto; /* Center align and add spacing */
 }
 
 .subtotal__gift {
@@ -22,10 +26,82 @@
 .subtotal > button {
   background: #ff9f00;
   border-radius: 2px;
-  width: 100%;
-  height: 30px;
+  width: 100%; /* Ensure button spans the full width */
+  height: 35px; /* Adjust button height */
   border: 1px solid;
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
+  font-size: 16px; /* Maintain readability */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out; /* Add hover effect */
+}
+
+.subtotal > button:hover {
+  background: #d88a00;
+}
+
+/* Responsive Design */
+
+/* iPhone 14 Pro Max (Medium Devices - Tablets, Landscape View) */
+@media (max-width: 1290px) {
+  .subtotal {
+    padding: 15px; /* Reduce padding for better fit */
+    max-width: 90%; /* Allow flexibility in width */
+  }
+
+  .subtotal__gift {
+    flex-direction: row; /* Keep checkbox and text aligned horizontally */
+  }
+
+  .subtotal > button {
+    height: 30px; /* Slightly reduce button height */
+    font-size: 14px; /* Adjust font size for compact layout */
+  }
+}
+
+/* Samsung Galaxy S8+ (Smaller Devices, Phones in Landscape/Portrait Mode) */
+@media (max-width: 1440px) {
+  .subtotal {
+    padding: 15px; /* Ensure content fits smaller screens */
+    max-width: 90%; /* Flexibly adjust width */
+  }
+
+  .subtotal__gift {
+    flex-direction: column; /* Stack items vertically for better space usage */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .subtotal__gift > input {
+    margin-bottom: 5px; /* Add spacing when stacked */
+  }
+
+  .subtotal > button {
+    height: 28px; /* Compact button height */
+    font-size: 12px; /* Make text readable on small screens */
+  }
+}
+
+/* Universal Small Devices (Phones, Portrait Mode) */
+@media (max-width: 768px) {
+  .subtotal {
+    padding: 10px; /* Further reduce padding for compact devices */
+    max-width: 100%; /* Use full-width on small screens */
+    margin: 20px 0; /* Center align with additional spacing */
+  }
+
+  .subtotal__gift {
+    flex-direction: column; /* Stack gift checkbox and text */
+    align-items: flex-start;
+  }
+
+  .subtotal__gift > input {
+    margin-bottom: 5px;
+  }
+
+  .subtotal > button {
+    height: 25px; /* Reduce button height for mobile */
+    font-size: 12px; /* Compact font for mobile usability */
+  }
 }

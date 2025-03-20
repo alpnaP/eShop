@@ -10,10 +10,38 @@
   min-width: 100px;
   background-color: white;
   z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product__info {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.product__info > p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.product__price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 .product__rating {
   display: flex;
+  justify-content: center;
+}
+
+.product__rating > p {
+  font-size: 14px;
 }
 
 .product > img {
@@ -29,13 +57,95 @@
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
-.product__price {
-  margin-top: 5px;
+.product > button:hover {
+  background: #d88a00;
 }
 
-.product__info {
-  height: 100px;
-  margin-bottom: 15px;
+/* Responsive Design for iPhone 14 Pro Max */
+@media (max-width: 1290px) {
+  .product {
+    max-height: 350px;
+    padding: 15px;
+  }
+
+  .product__info > p {
+    font-size: 15px;
+  }
+
+  .product__price {
+    font-size: 16px;
+  }
+
+  .product__rating > p {
+    font-size: 12px;
+  }
+
+  .product > button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Responsive Design for Samsung Galaxy S8+ */
+@media (max-width: 1440px) {
+  .product {
+    max-height: 350px;
+    padding: 15px;
+  }
+
+  .product__info > p {
+    font-size: 15px;
+  }
+
+  .product__price {
+    font-size: 16px;
+  }
+
+  .product__rating > p {
+    font-size: 12px;
+  }
+
+  .product > img {
+    max-height: 180px;
+    margin: 15px 0 0 10px;
+  }
+
+  .product > button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Further adjustments for smaller screens (common for both devices) */
+@media (max-width: 768px) {
+  .product {
+    padding: 10px;
+  }
+
+  .product__info > p {
+    font-size: 14px;
+  }
+
+  .product__price {
+    font-size: 14px;
+  }
+
+  .product__rating > p {
+    font-size: 10px;
+  }
+
+  .product > img {
+    max-height: 150px;
+  }
+
+  .product > button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }
